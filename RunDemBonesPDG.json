@@ -1,0 +1,14 @@
+{
+    "path": "$RDBPDG",
+    "load_package_once": true,
+    "version": "20",
+    "enable": true,
+    "env": [
+        {
+            "RDBPDG": "C:/Github/RunDemBonesPDG"
+        },
+        {
+            "PYTHONPATH" : "$RDBPDG/scripts/"
+        },
+    ]
+}
