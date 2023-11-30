@@ -5,14 +5,14 @@
     "nIters": 50,
     "tolerance": 0.001,
     "patience": 5,
-    "nTransIters": 10,
+    "nTransIters": 5,
     "bindUpdate": 1,
     "transAffine": 10,
     "transAffineNorm": 4,
     "nWeightsIters": 4,
     "nnz": 8,
-    "weightsSmooth": 0.0001,
+    "weightsSmooth": 0.01,
     "weightsSmoothStep": 1,
-    "dbg": 2
+    "dbg": 1
   }
 }
