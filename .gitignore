@@ -200,6 +200,10 @@ cmake-build-*/
 
 # File-based project format
 *.iws
+*.bgeo
+*.bgeo.sc
+*.abc
+*.fbx
 
 # IntelliJ
 out/
