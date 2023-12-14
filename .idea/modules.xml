@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../OpenUSD/.idea/OpenUSD.iml" filepath="$PROJECT_DIR$/../OpenUSD/.idea/OpenUSD.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/RunDemBonesPDG.iml" filepath="$PROJECT_DIR$/.idea/RunDemBonesPDG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Simplygon-API-Examples/.idea/Simplygon-API-Examples.iml" filepath="$PROJECT_DIR$/../Simplygon-API-Examples/.idea/Simplygon-API-Examples.iml" />
     </modules>
   </component>
 </project>
