@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../Simplygon-API-Examples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../ldraw2houdini" vcs="Git" />
   </component>
 </project>
