@@ -1,3 +1,4 @@
+import os
 import pdg
 from pdg.processor import PyProcessor
 from pdg import (envVar, strData, intData, floatData, resultData, hasStrData, hasIntData, hasFloatData, hasResultData, resultDataIndex, findResultData, findDirectResultData, floatDataArray, intDataArray, strDataArray, findData, findDirectData, input, workItem, kwargs)
@@ -31,8 +32,8 @@ class RunDemBones(PyProcessor):
         
         def set_attrs(self, work_item):
             # Construct the command with subprocess options
-            command = ['"C:\Github\RunDemBonesPDG\exe\DemBones\DemBones-Windows.exe"']  # Replace with the actual path to the executable
-        
+            command = [f"'{os.environ.get('DemBonesExe')}'"]
+
             # Required attributes
             abc_file = work_item.attribValue("abc_files")
             command.append(f"-a='{abc_file}'")
@@ -102,10 +103,12 @@ class RunDemBones(PyProcessor):
             log = work_item.attribValue("log")
             if log:
                 command.append(f"--log={log}")
-        
+
+            work_item.setStringAttrib("Command", " ".join(command))
+
             # Set the command line that this work item will run
             work_item.setCommand(" ".join(command))
-        
+
         
         if upstream_items:
             # If there are upstream items, generate new items from them

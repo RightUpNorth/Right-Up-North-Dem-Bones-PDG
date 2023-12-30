@@ -10,5 +10,8 @@
         {
             "PYTHONPATH" : "$RDBPDG/scripts/"
         },
+        {
+            "DemBonesExe": "$RDBPDG/exe/DemBones/DemBones-Windows.exe"
+        }
     ]
 }
