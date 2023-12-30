@@ -1,3 +1,16 @@
+# What is Dem Bones?
+
+Open Source repository developed by SEED EA based on the implementation of Smooth Skinning Decomposition with Rigid Bones, 
+
+- https://github.com/electronicarts/dem-bones
+
+An automated algorithm to extract the Linear Blend Skinning (LBS) with bone transformations from a set of example meshes. 
+Skinning Decomposition can be used in various tasks:
+
+- converting any animated mesh sequence, e.g. geometry cache, to LBS, which can be replayed in popular game engines,
+- solving skinning weights from shapes and skeleton poses, e.g. converting blendshapes to LBS,
+- solving bone transformations for a mesh animation given skinning weights.
+
 # Work Item Configuration README
 
 This README file describes the attributes used in the work item JSON configuration. Each attribute corresponds to a specific parameter in the PDG work item setup for a subprocess command.
