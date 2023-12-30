@@ -1,6 +1,6 @@
 {
   "work_item": {
-    "nBones": 26,
+    "nBones": 25,
     "nInitIters": 20,
     "nIters": 79,
     "tolerance": 0.008052883122118559,
