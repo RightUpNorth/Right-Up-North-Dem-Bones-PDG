@@ -5,10 +5,10 @@ from pdg import (envVar, strData, intData, floatData, resultData, hasStrData, ha
 
 
 class RunDemBones(PyProcessor):
-
     @classmethod
     def templateName(cls):
         return 'pythonprocessor1_template'
+
 
     @classmethod
     def templateBody(cls):
@@ -19,8 +19,10 @@ class RunDemBones(PyProcessor):
             ]
         }"""
 
+
     def onAddInternalDependencies(self, dependency_holder, internal_items, is_static):
         return pdg.result.Success
+
 
     def onGenerate(self, item_holder, upstream_items, generation_type):
         # Called when this node should generate new work items from upstream items.
@@ -122,6 +124,8 @@ class RunDemBones(PyProcessor):
 
     def onRegenerate(self, item_holder, existing_items, upstream_items, generation_type):
         return pdg.result.Success
+
+
     def onCookTask(self, work_item):
         # Called when an in process work item needs to cook. In process work items
         # are created by passing the  flag when constructing the item in
@@ -129,7 +133,13 @@ class RunDemBones(PyProcessor):
         #
         # self              -   A reference to the current pdg.Node instance
         # work_item         -   The work item being cooked by this callback
+
+        # Register the output file, so it can be tracked and managed
+        # work_item.addOutputFiles([work_item.attribValue("out_files")], "file")
+
         return pdg.result.Success
+
+
     def onConfigureNode(self, node_options):
         node_options.serviceName = ''
         node_options.isAlwaysRegenerate = False

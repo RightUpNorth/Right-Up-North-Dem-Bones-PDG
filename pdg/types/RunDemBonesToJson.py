@@ -50,29 +50,34 @@ class write_dembones_parms_to_json(PyProcessor):
         
             # Wrap the work item data in the desired structure
             json_data = {"work_item": work_item_data}
-        
-            # Convert the data to JSON format
+
+            # Store the JSON data as a string attribute for use in onCookTask
             json_output = json.dumps(json_data, indent=2)
-        
-            # Define a file name (modify this as per your file naming convention)
+            new_item.setStringAttrib("json_output", json_output)
+
+            # Define a file name and store it as an attribute for use in onCookTask
             file_name = str(new_item.attribValue("dembones_json"))
-        
-            # Write the JSON data to a file
-            with open(file_name, 'w') as f:
-                f.write(json_output)
+            new_item.setStringAttrib("output_file_name", file_name)
         
         return pdg.result.Success
 
     def onRegenerate(self, item_holder, existing_items, upstream_items, generation_type):
         return pdg.result.Success
+
     def onCookTask(self, work_item):
-        # Called when an in process work item needs to cook. In process work items
-        # are created by passing the  flag when constructing the item in
-        # the Generate callback
-        #
-        # self              -   A reference to the current pdg.Node instance
-        # work_item         -   The work item being cooked by this callback
+        # Retrieve the JSON output and file name from the work item attributes
+        json_output = work_item.attribValue("json_output")
+        file_name = work_item.attribValue("output_file_name")
+
+        # Write the JSON data to a file
+        with open(file_name, 'w') as f:
+            f.write(json_output)
+
+        # Register the output file, so it can be tracked and managed
+        # work_item.addOutputFiles([file_name], "file")
+
         return pdg.result.Success
+
     def onConfigureNode(self, node_options):
         node_options.serviceName = ''
         node_options.isAlwaysRegenerate = False
