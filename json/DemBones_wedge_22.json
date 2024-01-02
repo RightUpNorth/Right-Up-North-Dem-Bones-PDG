@@ -1,0 +1,18 @@
+{
+  "work_item": {
+    "nBones": 52,
+    "nInitIters": 19,
+    "nIters": 58,
+    "tolerance": 0.0008741103516622609,
+    "patience": 10,
+    "nTransIters": 10,
+    "bindUpdate": 0,
+    "transAffine": 1684.014271227163,
+    "transAffineNorm": 5.516035773812055,
+    "nWeightsIters": 3,
+    "nnz": 7,
+    "weightsSmooth": 0.006548656424973576,
+    "weightsSmoothStep": 9.701635923799108,
+    "dbg": 0
+  }
+}

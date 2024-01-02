@@ -1,18 +1,18 @@
 {
   "work_item": {
-    "nBones": 25,
-    "nInitIters": 20,
-    "nIters": 79,
-    "tolerance": 0.008052883122118559,
-    "patience": 20,
-    "nTransIters": 10,
-    "bindUpdate": null,
-    "transAffine": 10000.0,
-    "transAffineNorm": 16.0,
-    "nWeightsIters": 5,
-    "nnz": 10,
-    "weightsSmooth": 0.001,
-    "weightsSmoothStep": 42.0,
-    "dbg": 1
+    "nBones": 37,
+    "nInitIters": 11,
+    "nIters": 51,
+    "tolerance": 0.0008741103516622609,
+    "patience": 5,
+    "nTransIters": 6,
+    "bindUpdate": 0,
+    "transAffine": 3788.736370378857,
+    "transAffineNorm": 7.305224103623333,
+    "nWeightsIters": 3,
+    "nnz": 5,
+    "weightsSmooth": 0.007589788978243201,
+    "weightsSmoothStep": 36.35356297545525,
+    "dbg": 0
   }
 }
