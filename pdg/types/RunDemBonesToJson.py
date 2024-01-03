@@ -62,6 +62,7 @@ class write_dembones_parms_to_json(PyProcessor):
         return pdg.result.Success
 
     def onRegenerate(self, item_holder, existing_items, upstream_items, generation_type):
+        print("Regenerate json trigger")
         return pdg.result.Success
 
     def onCookTask(self, work_item):
@@ -74,7 +75,7 @@ class write_dembones_parms_to_json(PyProcessor):
             f.write(json_output)
 
         # Register the output file, so it can be tracked and managed
-        # work_item.addOutputFiles([file_name], "file")
+        work_item.addOutputFiles([file_name], "file")
 
         return pdg.result.Success
 

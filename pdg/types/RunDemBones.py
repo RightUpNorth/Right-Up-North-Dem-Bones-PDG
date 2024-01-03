@@ -122,7 +122,9 @@ class RunDemBones(PyProcessor):
                 set_attrs(self, new_item)
         return pdg.result.Success
 
+
     def onRegenerate(self, item_holder, existing_items, upstream_items, generation_type):
+        print("Regenerate DemBones CMD trigger")
         return pdg.result.Success
 
 
