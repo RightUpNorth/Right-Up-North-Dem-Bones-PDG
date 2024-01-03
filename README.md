@@ -1,3 +1,20 @@
+# Run Dem Bones
+
+A houdini digital (SOP) asset that utilises PDG with wedging to turn alembic animations into skinned fbx files.
+
+Features:
+  - Define through primitive attribute how to split up the geometry.
+  - A dynamic Bone calculation method based on curvature complexity on a specific frame.
+  - Easily switch between results on the SOP level.
+  - Apply the unique parameters of your wedge onto the top level parameters. This allows the asset to run faster and guarantees an accurate reconstruction when the input changes.
+  - Each wedge is merged into one skeleton
+
+# How to install
+tbd
+
+# Where to find the demo HIP
+tbd
+
 # What is Dem Bones?
 
 Open Source repository developed by SEED EA based on the implementation of Smooth Skinning Decomposition with Rigid Bones, 
