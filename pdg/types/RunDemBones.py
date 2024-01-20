@@ -108,6 +108,9 @@ class RunDemBones(PyProcessor):
 
             work_item.setStringAttrib("Command", " ".join(command))
 
+            # Register the output file, so it can be tracked and managed
+            work_item.addOutputFile(str(work_item.attribValue("out_files")))
+
             # Set the command line that this work item will run
             work_item.setCommand(" ".join(command))
 
@@ -120,6 +123,7 @@ class RunDemBones(PyProcessor):
                                                    parent=upstream_item)
                 # Set the item's attributes based on the parameters
                 set_attrs(self, new_item)
+
         return pdg.result.Success
 
 
@@ -135,9 +139,6 @@ class RunDemBones(PyProcessor):
         #
         # self              -   A reference to the current pdg.Node instance
         # work_item         -   The work item being cooked by this callback
-
-        # Register the output file, so it can be tracked and managed
-        # work_item.addOutputFiles([work_item.attribValue("out_files")], "file")
 
         return pdg.result.Success
 

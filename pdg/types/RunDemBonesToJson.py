@@ -39,7 +39,7 @@ class write_dembones_parms_to_json(PyProcessor):
         ]
         
         for upstream_item in upstream_items:
-            new_item = item_holder.addWorkItem(parent=upstream_item)
+            new_item = item_holder.addWorkItem(parent=upstream_item, cookType=pdg.workItemCookType.InProcess)
         
             # Create a dictionary to store the work item data
             work_item_data = {}
@@ -58,7 +58,10 @@ class write_dembones_parms_to_json(PyProcessor):
             # Define a file name and store it as an attribute for use in onCookTask
             file_name = str(new_item.attribValue("dembones_json"))
             new_item.setStringAttrib("output_file_name", file_name)
-        
+
+            # Register the output file, so it can be tracked and managed
+            new_item.addOutputFile(file_name, tag="json/file")
+
         return pdg.result.Success
 
     def onRegenerate(self, item_holder, existing_items, upstream_items, generation_type):
@@ -73,9 +76,6 @@ class write_dembones_parms_to_json(PyProcessor):
         # Write the JSON data to a file
         with open(file_name, 'w') as f:
             f.write(json_output)
-
-        # Register the output file, so it can be tracked and managed
-        work_item.addOutputFiles([file_name], "file")
 
         return pdg.result.Success
 
