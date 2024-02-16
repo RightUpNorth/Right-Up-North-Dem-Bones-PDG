@@ -21,7 +21,7 @@ Extended functionality based on the SideFX Labs DemBones HDA.
   - solving skinning weights from shapes and skeleton poses, e.g. converting blendshapes to LBS,
 
 # How to install
-tbd
+Open the json package file, change the location to your directory and copy it to your Houdini documents / packages folder.
 
 # Usage
 
